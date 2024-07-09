@@ -5,6 +5,8 @@ import { getAuth } from "firebase/auth";
 // initializeApp 함수로 초기화된 Firebase 앱 객체를 인자로 받아 해댕 앱에 대한 Authentication 인스턴스 생성
 // 이 인스턴스로 사용자 인증 및 관리 (로그인, 로그아웃, 회원가입, 비밀번호 재설정 등)
 
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,7 +30,8 @@ const firebaseConfig = {
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 export const analytics = getAnalytics(app);
+const firestore = getFirestore(app);
 
 
 
-export { app, auth };
+export { app, auth, firestore };
