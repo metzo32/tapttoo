@@ -13,7 +13,7 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-//firebase 설정 객체
+//firebase 설정 객체g
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
@@ -29,9 +29,9 @@ const firebaseConfig = {
 // Firebase 앱 초기화 또는 기존 앱 가져오기
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
-export const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);
 const firestore = getFirestore(app);
 
 
 
-export { app, auth, firestore };
+export { app, auth, firestore, analytics };
